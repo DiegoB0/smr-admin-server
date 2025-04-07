@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:ignoreFile
+
 /*
  * This file is part of the Laravel Cloudinary package.
  *

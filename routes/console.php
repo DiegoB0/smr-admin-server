@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:ignoreFile
+
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 

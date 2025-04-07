@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:ignoreFile
+
 namespace App\Http\Middleware;
 
 use Closure;

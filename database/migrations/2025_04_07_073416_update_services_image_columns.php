@@ -12,14 +12,11 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('category');
-            $table->string('image')->nullable();
-            $table->timestamps();
+        Schema::table('services', function (Blueprint $table) {
+            $table->renameColumn('image', 'image_id');
+            $table->string('image_url')->nullable();
         });
+        //
     }
 
     /**
@@ -27,6 +24,10 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::table('services', function (Blueprint $table) {
+            $table->renameColumn('image_id', 'image');
+            $table->dropColumn('image_url');
+        });
+        //
     }
 };

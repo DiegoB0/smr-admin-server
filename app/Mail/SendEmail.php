@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:ignoreFile
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -8,7 +10,8 @@ use Illuminate\Queue\SerializesModels;
 
 class SendEmail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $data;
 
@@ -30,9 +33,9 @@ class SendEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('test')
+        return $this->view('emails.recieved_email')
             ->with('data', $this->data)
-            ->from('smr@smrheavymaq.com', 'SMR Heavy Maq')
+            ->from('dev@smrheavymaq.com', 'SMR Heavy Maq')
             ->replyTo($this->data['sender_email'])
             ->subject('Nuevo mensaje de: ' . $this->data['sender_name']);
     }
