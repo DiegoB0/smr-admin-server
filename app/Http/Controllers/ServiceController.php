@@ -84,7 +84,7 @@ class ServiceController extends Controller
         $validated = $request->validate([
             'title'     => 'required|string|max:255',
             'description'  => 'required|string|max:255',
-            'icon'  => 'required|string',
+            'icon'  => 'nullable|string',
             'image'    => 'nullable|image|max:5120', // expects a file upload
         ]);
 
