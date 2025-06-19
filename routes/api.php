@@ -11,6 +11,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RequisicionController;
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
@@ -38,3 +39,5 @@ Route::middleware(['auth:api', 'checkRole:admin,blogger'])->group(function () {
 
 // For the webpage
 Route::post('/send-email', [ContactController::class, 'sendEmail']);
+
+Route::post('/requisiciones', [RequisicionController::class, 'store']);
