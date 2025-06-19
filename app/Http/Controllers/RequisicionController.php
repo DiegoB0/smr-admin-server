@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\RequisicionRequest;
 use App\Models\Requisicion;
 use Illuminate\Support\Facades\Log;
@@ -18,7 +19,7 @@ class RequisicionController extends Controller
         Log::info('Cuerpo raw del request', ['raw' => $rawBody]);
 
         // Depuración temporal: Muestra los datos en la terminal al inicio
-        dd($request->all());
+        // dd($request->all());
 
         // Obtiene los datos validados
         $validated = $request->validated();
@@ -40,3 +41,4 @@ class RequisicionController extends Controller
         ], 201);
     }
 }
+
